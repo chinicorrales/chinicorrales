@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiénes Somos — Chini Corrales</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #f7f3ee;
+    --sand: #e8dfd4;
+    --earth: #b8956a;
+    --deep: #2c2418;
+    --mid: #6b5744;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--deep);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px 100px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--earth);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--deep);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .title em {
+    font-style: italic;
+    color: var(--earth);
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--earth);
+    margin: 32px auto 0;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  /* Intro quote */
+  .intro-quote {
+    text-align: center;
+    margin-bottom: 80px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .intro-quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.5;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* Story sections */
+  .story {
+    display: grid;
+    gap: 60px;
+  }
+
+  .story-block {
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+  }
+  .story-block:nth-child(1) { animation-delay: 1s; }
+  .story-block:nth-child(2) { animation-delay: 1.2s; }
+  .story-block:nth-child(3) { animation-delay: 1.4s; }
+  .story-block:nth-child(4) { animation-delay: 1.6s; }
+
+  .story-block.highlighted {
+    background: var(--sand);
+    border-left: 2px solid var(--earth);
+    padding: 40px 48px;
+  }
+
+  .story-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--earth);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .story-text {
+    font-size: clamp(15px, 1.8vw, 17px);
+    color: var(--deep);
+    line-height: 1.9;
+  }
+
+  .story-text strong {
+    font-weight: 500;
+    color: var(--earth);
+  }
+
+  /* Closing */
+  .closing {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px solid var(--sand);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.8s;
+  }
+
+  .closing-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-style: italic;
+    color: var(--mid);
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 14px 44px;
+    border: 1px solid var(--earth);
+    color: var(--earth);
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .cta-btn:hover {
+    background: var(--earth);
+    color: var(--cream);
+  }
+
+  /* Copyable text section */
+  .copy-section {
+    margin-top: 80px;
+    background: #fff;
+    border: 1px solid var(--sand);
+    padding: 40px;
+    border-radius: 2px;
+  }
+
+  .copy-section h3 {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--earth);
+    margin-bottom: 24px;
+  }
+
+  .copy-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    color: #444;
+    white-space: pre-wrap;
+    border: 1px dashed var(--sand);
+    padding: 24px;
+    background: var(--cream);
+  }
+
+  .copy-btn {
+    margin-top: 16px;
+    padding: 10px 28px;
+    background: var(--earth);
+    color: white;
+    border: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .copy-btn:hover { opacity: 0.85; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 60px 24px 80px; }
+    .story-block.highlighted { padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="eyebrow">Nuestra historia</div>
+    <h1 class="title">Cada sombrero<br>tiene <em>un origen.</em></h1>
+    <div class="divider"></div>
+  </div>
+
+  <div class="intro-quote">
+    <blockquote>
+      "No encontraba el sombrero que buscaba.<br>Así que decidí hacerlo yo misma."
+    </blockquote>
+  </div>
+
+  <div class="story">
+
+    <div class="story-block">
+      <div class="story-label">El comienzo</div>
+      <p class="story-text">
+        Todo empezó con un sombrero olvidado. Una amiga llegó a casa con un sombrero de fieltro que me dejó sin palabras. Al día siguiente, mi prima —boliviana como toda mi familia— me dijo algo que lo cambiaría todo: <strong>"ese tipo de sombreros los hacen en el pueblo de tu mamá."</strong>
+      </p>
+    </div>
+
+    <div class="story-block highlighted">
+      <div class="story-label">Raíces andinas</div>
+      <p class="story-text">
+        Bolivia y el sombrero de fieltro son inseparables. Cada departamento tiene su propio estilo, su propia forma de llevarlo. Esa tradición es parte de mi historia, de mi familia, de quién soy. Mi conexión con este oficio no es casual: <strong>está directamente ligada a mis raíces andinas.</strong> Y eso se siente en cada pieza que creo.
+      </p>
+    </div>
+
+    <div class="story-block">
+      <div class="story-label">La formación</div>
+      <p class="story-text">
+        Lo que empezó customizando los primeros sombreros que me enviaron desde Bolivia se convirtió en una vocación seria. Me formé durante dos años en sombrerería de fieltro con <strong>Patricia Terán</strong>, una de las maestras sombrereras más prestigiosas del país. Hoy continúo perfeccionando mi arte en <strong>sombrerería de alta costura junto a Laura Noetinger</strong>, referente de élite en Argentina.
+      </p>
+    </div>
+
+    <div class="story-block highlighted">
+      <div class="story-label">Chini hoy</div>
+      <p class="story-text">
+        Chini Corrales es un atelier de sombrerería artesanal con base en Buenos Aires. Cada pieza es única e irrepetible: diseñada, construida y terminada a mano. Además de crear sombreros, <strong>soy proveedora de paños de fieltro para la comunidad sombrerera argentina</strong> — un reconocimiento de mis pares que me llena de orgullo. Hago este oficio con amor, con seriedad y con la responsabilidad de quien sabe que lleva una tradición en las manos.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="closing">
+    <p class="closing-text">
+      Cuando llevás un sombrero de Chini Corrales,<br>llevás historia, artesanía y un pedacito de los Andes.
+    </p>
+    <a href="https://www.chinicorrales.com/sombreros/" class="cta-btn">Ver la colección</a>
+  </div>
+
+  <!-- TEXTO PARA COPIAR EN TIENDANUBE -->
+  <div class="copy-section">
+    <h3>✂ Texto listo para pegar en Tiendanube</h3>
+    <div class="copy-text" id="copyText">CADA SOMBRERO TIENE UN ORIGEN.
+
+"No encontraba el sombrero que buscaba. Así que decidí hacerlo yo misma."
+
+— EL COMIENZO —
+Todo empezó con un sombrero olvidado. Una amiga llegó a casa con un sombrero de fieltro que me dejó sin palabras. Al día siguiente, mi prima —boliviana como toda mi familia— me dijo algo que lo cambiaría todo: "ese tipo de sombreros los hacen en el pueblo de tu mamá."
+
+— RAÍCES ANDINAS —
+Bolivia y el sombrero de fieltro son inseparables. Cada departamento tiene su propio estilo, su propia forma de llevarlo. Esa tradición es parte de mi historia, de mi familia, de quién soy. Mi conexión con este oficio no es casual: está directamente ligada a mis raíces andinas. Y eso se siente en cada pieza que creo.
+
+— LA FORMACIÓN —
+Lo que empezó customizando los primeros sombreros que me enviaron desde Bolivia se convirtió en una vocación seria. Me formé durante dos años en sombrerería de fieltro con Patricia Terán, una de las maestras sombrereras más prestigiosas del país. Hoy continúo perfeccionando mi arte en sombrerería de alta costura junto a Laura Noetinger, referente de élite en Argentina.
+
+— CHINI HOY —
+Chini Corrales es un atelier de sombrerería artesanal con base en Buenos Aires. Cada pieza es única e irrepetible: diseñada, construida y terminada a mano. Además de crear sombreros, soy proveedora de paños de fieltro para la comunidad sombrerera argentina — un reconocimiento de mis pares que me llena de orgullo. Hago este oficio con amor, con seriedad y con la responsabilidad de quien sabe que lleva una tradición en las manos.
+
+Cuando llevás un sombrero de Chini Corrales, llevás historia, artesanía y un pedacito de los Andes.</div>
+    <button class="copy-btn" onclick="copyToClipboard()">Copiar texto</button>
+    <span id="copyConfirm" style="margin-left:12px; font-size:12px; color: #b8956a; display:none;">¡Copiado!</span>
+  </div>
+
+</div>
+
+<script>
+function copyToClipboard() {
+  const text = document.getElementById('copyText').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const confirm = document.getElementById('copyConfirm');
+    confirm.style.display = 'inline';
+    setTimeout(() => confirm.style.display = 'none', 2500);
+  });
+}
+</script>
+</body>
+</html>
