@@ -171,49 +171,7 @@
     color: var(--cream);
   }
 
-  /* Copyable text section */
-  .copy-section {
-    margin-top: 80px;
-    background: #fff;
-    border: 1px solid var(--sand);
-    padding: 40px;
-    border-radius: 2px;
-  }
 
-  .copy-section h3 {
-    font-family: 'Jost', sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--earth);
-    margin-bottom: 24px;
-  }
-
-  .copy-text {
-    font-family: 'Jost', sans-serif;
-    font-size: 14px;
-    line-height: 2;
-    color: #444;
-    white-space: pre-wrap;
-    border: 1px dashed var(--sand);
-    padding: 24px;
-    background: var(--cream);
-  }
-
-  .copy-btn {
-    margin-top: 16px;
-    padding: 10px 28px;
-    background: var(--earth);
-    color: white;
-    border: none;
-    font-family: 'Jost', sans-serif;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: opacity 0.2s;
-  }
-  .copy-btn:hover { opacity: 0.85; }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -280,41 +238,10 @@
     <a href="https://www.chinicorrales.com/sombreros/" class="cta-btn">Ver la colección</a>
   </div>
 
-  <!-- TEXTO PARA COPIAR EN TIENDANUBE -->
-  <div class="copy-section">
-    <h3>✂ Texto listo para pegar en Tiendanube</h3>
-    <div class="copy-text" id="copyText">CADA SOMBRERO TIENE UN ORIGEN.
 
-"No encontraba el sombrero que buscaba. Así que decidí hacerlo yo misma."
-
-— EL COMIENZO —
-Todo empezó con un sombrero olvidado. Una amiga llegó a casa con un sombrero de fieltro que me dejó sin palabras. Al día siguiente, mi prima —boliviana como toda mi familia— me dijo algo que lo cambiaría todo: "ese tipo de sombreros los hacen en el pueblo de tu mamá."
-
-— RAÍCES ANDINAS —
-Bolivia y el sombrero de fieltro son inseparables. Cada departamento tiene su propio estilo, su propia forma de llevarlo. Esa tradición es parte de mi historia, de mi familia, de quién soy. Mi conexión con este oficio no es casual: está directamente ligada a mis raíces andinas. Y eso se siente en cada pieza que creo.
-
-— LA FORMACIÓN —
-Lo que empezó customizando los primeros sombreros que me enviaron desde Bolivia se convirtió en una vocación seria. Me formé durante dos años en sombrerería de fieltro con Patricia Terán, una de las maestras sombrereras más prestigiosas del país. Hoy continúo perfeccionando mi arte en sombrerería de alta costura junto a Laura Noetinger, referente de élite en Argentina.
-
-— CHINI HOY —
-Chini Corrales es un atelier de sombrerería artesanal con base en Buenos Aires. Cada pieza es única e irrepetible: diseñada, construida y terminada a mano. Además de crear sombreros, soy proveedora de paños de fieltro para la comunidad sombrerera argentina — un reconocimiento de mis pares que me llena de orgullo. Hago este oficio con amor, con seriedad y con la responsabilidad de quien sabe que lleva una tradición en las manos.
-
-Cuando llevás un sombrero de Chini Corrales, llevás historia, artesanía y un pedacito de los Andes.</div>
-    <button class="copy-btn" onclick="copyToClipboard()">Copiar texto</button>
-    <span id="copyConfirm" style="margin-left:12px; font-size:12px; color: #b8956a; display:none;">¡Copiado!</span>
-  </div>
 
 </div>
 
-<script>
-function copyToClipboard() {
-  const text = document.getElementById('copyText').innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    const confirm = document.getElementById('copyConfirm');
-    confirm.style.display = 'inline';
-    setTimeout(() => confirm.style.display = 'none', 2500);
-  });
-}
-</script>
+
 </body>
 </html>
